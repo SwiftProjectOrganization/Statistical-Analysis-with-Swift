@@ -3,15 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7F07DF31261F53B000BFFD3B /* Random Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F07DF30261F53B000BFFD3B /* Random Variables.swift */; };
 		7F3C2AB3261233E900EDDE1E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3C2AB2261233E900EDDE1E /* main.swift */; };
-		7F3C2ABE2612343600EDDE1E /* StatisticalSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3C2ABD2612343600EDDE1E /* StatisticalSwift.framework */; };
 		7F3C2AC12612348000EDDE1E /* General Addition Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3C2AC02612348000EDDE1E /* General Addition Rule.swift */; };
 		7FC0EA65261608A2003378F6 /* Conditional Probabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC0EA64261608A2003378F6 /* Conditional Probabilities.swift */; };
+		D4C6BB9C2E89BBF300339D3E /* StatisticalSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3C2ABD2612343600EDDE1E /* StatisticalSwift.framework */; };
+		D4C6BB9D2E89BBF300339D3E /* StatisticalSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7F3C2ABD2612343600EDDE1E /* StatisticalSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,6 +24,17 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
+		};
+		D4C6BB9E2E89BBF300339D3E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D4C6BB9D2E89BBF300339D3E /* StatisticalSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -41,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F3C2ABE2612343600EDDE1E /* StatisticalSwift.framework in Frameworks */,
+				D4C6BB9C2E89BBF300339D3E /* StatisticalSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +107,7 @@
 				7F3C2AAB261233E900EDDE1E /* Sources */,
 				7F3C2AAC261233E900EDDE1E /* Frameworks */,
 				7F3C2AAD261233E900EDDE1E /* CopyFiles */,
+				D4C6BB9E2E89BBF300339D3E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -111,8 +124,9 @@
 		7F3C2AA7261233E900EDDE1E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					7F3C2AAE261233E900EDDE1E = {
 						CreatedOnToolsVersion = 12.4;
@@ -186,9 +200,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -208,6 +224,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -247,9 +264,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -262,6 +281,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -272,6 +292,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -282,6 +304,8 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};

@@ -29,7 +29,7 @@ struct DistributionOfSampleMeans: View {
       .map { _ in
         samplesIterator
           .compactMap { _ in set.randomElement() }
-          .mean(of: \.self)
+          .mean(variable: \.self)
       }
       .reduce(into: [Double: Int]()) { dict, mean in
         let roundedMean = (mean / rounding)
@@ -44,7 +44,7 @@ struct DistributionOfSampleMeans: View {
       }
     
     self.barWidth = 0.9 * rounding
-    self.mean = set.mean(of: \.self)
+    self.mean = set.mean(variable: \.self)
     self.numberOfSamples = numberOfSamples
   }
   
@@ -73,8 +73,8 @@ struct DistributionOfSampleMeans: View {
 struct ContentView_Previews: PreviewProvider {
   static let xRange = stride(from: 0, through: 5, by: 0.05)
   static let measurements = (1 ... 100).map { _ in Int.random(in: 0 ... 5).realValue }
-  static let sampleMean = measurements.mean(of: \.self)
-  static let sampleStandardDeviation = measurements.standardDeviation(of: \.self, from: .sample)
+  static let sampleMean = measurements.mean(variable: \.self)
+  static let sampleStandardDeviation = measurements.standardDeviation(variable: \.self, from: .sample)
   static let numberOfSamples = 30
   static let numberOfMeans = 5_000
   static let normalDistribution = NormalDistribution(

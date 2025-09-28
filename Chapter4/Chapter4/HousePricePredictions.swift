@@ -45,7 +45,7 @@ internal enum HousePricePredictions {
       .map { sale in
         pow(regressor.predict(x: sale) - sale.price, 2)
       }
-      .mean(of: \.self)
+      .mean(variable: \.self)
       .squareRoot()
     
     print(
