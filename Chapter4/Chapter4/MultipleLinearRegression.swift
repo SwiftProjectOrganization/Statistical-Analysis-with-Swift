@@ -5,6 +5,7 @@ import Glibc
 import Accelerate
 #endif
 
+
 internal struct MultipleLinearRegression
 <Element, X: ConvertibleToReal, Y: ConvertibleToReal>
 : CustomStringConvertible {
